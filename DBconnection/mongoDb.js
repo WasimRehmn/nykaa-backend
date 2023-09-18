@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 class mongo {
     constructor() {
@@ -6,8 +7,10 @@ class mongo {
     }
 
     createMongoConnection() {
+        mongoose.set('strictQuery', true);
+        mongoose.connect(process.env.MONGO_URI);
         mongoose.connect(
-            "mongodb+srv://masai:school@cluster0.kd54o.mongodb.net/nykaa?retryWrites=true&w=majority"
+            ""
         );
         mongoose.connection.once("open", () => {
             console.log("MongoDb is Connected");

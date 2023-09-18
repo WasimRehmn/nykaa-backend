@@ -14,6 +14,7 @@ const getOnlyAtNykaa = async (req, res, next) => {
 const getTopBrands = async (req, res, next) => {
     try {
         let response = await topBrands.find({});
+        console.log(topBrands)
         res.status(200).json(response);
     } catch (error) {
         res.status(500).send(error);
