@@ -9,9 +9,7 @@ class mongo {
     createMongoConnection() {
         mongoose.set('strictQuery', true);
         mongoose.connect(process.env.MONGO_URI);
-        mongoose.connect(
-            ""
-        );
+        
         mongoose.connection.once("open", () => {
             console.log("MongoDb is Connected");
         });
