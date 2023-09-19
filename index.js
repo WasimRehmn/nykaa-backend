@@ -1,6 +1,7 @@
 const http = require("http");
 const connectToDb = require("./DBconnection/mongoDb");
 const app = require("./Routes/Route");
+require('dotenv').config();
 
 const PORT = process.env.PORT || 3006;
 
